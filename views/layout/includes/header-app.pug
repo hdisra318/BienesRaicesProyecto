@@ -1,0 +1,27 @@
+header.bg-teal-600.p-4
+    .container.mx-auto.flex.justify-between.items-center
+        a(href="/")
+            h1.text-2xl.text-white.font-extrabold.text-center(class="hover:scale-110 transition-all") Bienes
+                span.font-normal Raices
+
+        nav(class="my-5 text-sm md:flex md:items-center font-bold text-white md:gap-3 hidden")
+            a(href="/auth/registro") Crear Cuenta
+            a(href="/auth/login" class="bg-teal-800 hover:bg-teal-900 rounded-lg py-2 px-10") Iniciar Sesión
+
+
+div(class="bg-teal-700 py-5 hidden lg:block")
+    div(class="container mx-auto flex justify-between")
+        nav(class="flex gap-4 items-center")
+            a(href="/categorias/1" class="text-sm font-bold text-white hover:scale-110 transition-all") Casas
+            a(href="/categorias/2" class="text-sm font-bold text-white hover:scale-110 transition-all") Departamentos
+            a(href="/categorias/3" class="text-sm font-bold text-white hover:scale-110 transition-all") Bodegas
+            a(href="/categorias/4" class="text-sm font-bold text-white hover:scale-110 transition-all") Terrenos
+            a(href="/categorias/5" class="text-sm font-bold text-white hover:scale-110 transition-all") Cabañas
+
+        form(action="/buscador" method="POST" class="flex gap-3 items-center")
+            input(type="hidden" name="_csrf" value= csrfToken)
+            label(for="termino" class="text-md font-bold text-white") Búsqueda
+            input(type="text" name="termino" id="termino" placeholder="Buscar Propiedades" class="p-2 rounded-lg shadow text-md")
+
+            input(type="submit" class="bg-teal-800 hover:bg-teal-500 rounded-lg text-white font-bold p-2 cursor-pointer text-md" 
+                value="Buscar")
